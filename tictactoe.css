@@ -14,10 +14,12 @@ body {
   font-family: Arial, sans-serif;
 }
 
-/* Phone-style container */
+/* ✅ Responsive phone container for different screen sizes */
 .phone-container {
   width: 360px;
   height: 600px;
+  max-width: 90vw;
+  max-height: 95vh;
   background-image: url('./Assets/539441-PlayStation-Sony-video-games-black-background-creativity.jpg');
   background-size: cover;
   background-position: center;
@@ -29,6 +31,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
 
 .top-bar {
   display: flex;
