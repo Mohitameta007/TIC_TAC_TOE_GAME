@@ -1,0 +1,185 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #b1bed1;
+  font-family: 'Arial', sans-serif;
+}
+
+.phone-viewport {
+  position: relative;
+  width: 360px;
+  height: 600px;
+  background-color: #fff;
+  border-radius: 36px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.phone-viewport::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./Assets/720x1600 _ Wood Texture.jpeg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  z-index: -1;
+  border-radius: 36px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.game-title {
+  font-size: 3.2rem;
+  color: #000;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 1rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 90vw;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 30vw;
+  height: 30vw;
+  max-width: 100px;
+  max-height: 100px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+  user-select: none;
+  cursor: pointer;
+  border: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(4),
+.cell:nth-child(5),
+.cell:nth-child(7),
+.cell:nth-child(8) {
+  border-right: 4px solid black;
+}
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3),
+.cell:nth-child(4),
+.cell:nth-child(5),
+.cell:nth-child(6) {
+  border-bottom: 4px solid black;
+}
+
+.board-wrapper {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  /* 👇 Add this */
+  min-width: 300px;
+  min-height: 300px;
+}
+
+#winLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: rgb(81, 30, 30);
+  transform-origin: left center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 10;
+  pointer-events: none;
+}
+
+
+
+#restartButton {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border: none;
+  background-color: #121212;
+  color: #edebeb;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+#restartButton:hover {
+  background-color: #555454;
+}
+
+/* Modal */
+#chooseSignModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+.modal-content {
+  background-color: rgb(255, 255, 255);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.modal-content h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+.sign-btn {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #121212;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.3s;
+}
+.sign-btn:hover {
+  background-color: #444;
+}

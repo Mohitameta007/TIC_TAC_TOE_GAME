@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>X/O Game - Welcome</title>
+  <link rel="stylesheet" href="tictactoe.css">
+</head>
+<body>
+  
+  <div class="phone-container">
+    <div class="top-bar">
+      <div>X/O</div>
+      <button class="about-button" onclick="openModal()">About</button>
+    </div>
+    
+    <div class="center-options">
+      <button class="option-button" onclick="window.location.href='singleplayer.html'">Single Player</button>
+      <button class="option-button" onclick="window.location.href='multiplayer.html'">Multiplayer</button>
+      <button class="option-button" onclick="openHowToPlay()">How to Play</button>
+      <button class="option-button coming-soon" onclick="showThemeMessage()">Themes (Coming Soon)</button>
+    </div>
+
+    <div class="footer">
+      Powered by Mohit Ameta
+    </div>
+  </div>
+
+  <!-- About Modal -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeModal()">×</span>
+      <h2>About This Game</h2>
+      <p>This is a Tic Tac Toe game project made by Mohit Ameta. Built with HTML, CSS, and JavaScript. Enjoy the game!</p>
+    </div>
+  </div>
+
+  <!-- How to Play Modal -->
+  <div id="howToModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeHowToPlay()">×</span>
+      <h2>How to Play</h2>
+      <p>
+        This is a classic Tic Tac Toe game.<br>
+        ➤ Players take turns with X and O.<br>
+        ➤ First to get 3 in a row wins.<br>
+        ➤ Try to block your opponent too!
+      </p>
+    </div>
+  </div>
+
+  <!-- Themes Coming Soon Modal -->
+  <div id="themeModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button" onclick="closeThemeModal()">×</span>
+      <h2>Themes - Coming Soon</h2>
+      <p>
+        We're working on new themes to make your game experience even more fun and colorful!<br>
+        Stay tuned for upcoming updates.
+      </p>
+    </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="tictactoe.js"></script>
+</body>
+</html>
